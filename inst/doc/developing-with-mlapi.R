@@ -1,4 +1,4 @@
-## ---- eval=FALSE---------------------------------------------------------
+## ---- eval=FALSE--------------------------------------------------------------
 #  # transformer:
 #  # scaler just divide each column by std_dev
 #  scaler = Scaler$new()
@@ -14,20 +14,20 @@
 #  # fit L1/L2 regularized logistic regression
 #  logreg = LogisticRegression(L1 = 0.1, L2 = 10)
 
-## ---- eval=FALSE---------------------------------------------------------
+## ---- eval=FALSE--------------------------------------------------------------
 #  train %>%
 #    fit_transform(scaler) %>%
 #    fit_transform(trunc_svd) %>%
 #    fit(logreg)
 
-## ---- eval=FALSE---------------------------------------------------------
+## ---- eval=FALSE--------------------------------------------------------------
 #  predictions = test %>%
 #    transform(scaler) %>%
 #    transform(trunc_svd) %>%
 #    predict(logreg)
 #  
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 SimpleLinearModel = R6::R6Class(
   classname = "mlapiSimpleLinearModel", 
   inherit = mlapi::mlapiEstimation, 
@@ -57,7 +57,7 @@ SimpleLinearModel = R6::R6Class(
   )
 )
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 set.seed(1)
 model = SimpleLinearModel$new()
 x = matrix(sample(100 * 10, replace = T), ncol = 10)
@@ -68,7 +68,7 @@ res1 = model$predict(x)
 res2 = predict(x, model)
 identical(res1, res2)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 TruncatedSVD = R6::R6Class(
   classname = "TruncatedSVD", 
   inherit = mlapi::mlapiDecomposition, 
@@ -108,7 +108,7 @@ TruncatedSVD = R6::R6Class(
   )
 )
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 set.seed(1)
 model = TruncatedSVD$new(2)
 x = matrix(sample(100 * 10, replace = T), ncol = 10)

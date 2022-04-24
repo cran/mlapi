@@ -1,12 +1,12 @@
 ---
 title: "Developing machine learning models with 'mlapi'"
 author: "Dmitry Selivanov"
-date: "2017-12-07"
+date: "2022-04-24"
 output: 
   rmarkdown::html_vignette:
     keep_md: true
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Developing machine learning models with 'mlapi'}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
